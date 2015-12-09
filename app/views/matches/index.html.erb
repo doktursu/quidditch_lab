@@ -1,3 +1,9 @@
+<nav>
+  <ul>
+    <li><%= link_to "New Match", new_match_path %></li>
+  </ul>
+</nav>
+
 <% @matches.each do |match| %>
 <h2>Competition "<%= match.competition %>"</h2>
 <p><%= match.home_team.team.name %> vs. <%= match.team.name %></p>
