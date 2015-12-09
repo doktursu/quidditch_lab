@@ -1,0 +1,8 @@
+<% @teams.each do |team| %>
+  <h2><%= team.name %></h2>
+  <p>Founded in <%= team.founded %></p>
+  <%= link_to "Show #{team.name}", team_path(team), class: "btn" %>
+  <%= link_to "Edit Team", edit_team_path(team), class: "btn" %>
+  <%= button_to 'Delete Team', team_path(team), method: :delete, data: {confirm: 'Delete them? Are you sure?!'}, class: "btn" %>
+  <br>
+<% end %>

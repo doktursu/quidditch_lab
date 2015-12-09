@@ -1,0 +1,16 @@
+<h1><%= @team.name %></h1>
+<p>Mascot: <%= @team.mascot%></p>
+<%= image_tag @team.image, alt: 'No image', height: 200 %>
+<p>Founded: <%= @team.founded %></p>
+<p>Ground: <%= @team.ground %></p>
+<p>League: <%= @team.league %></p>
+<p>Position: <%= @team.last_position %></p>
+
+<p>Players:</p>
+<% @team.players.each do |player| %>
+  <p><%= player.name %>, <%= player.age %></p>
+<% end %>
+
+
+<%= link_to "Edit Team", edit_team_path(@team), class: "btn" %>
+<%= button_to 'Delete Team', team_path(@team), method: :delete, data: {confirm: 'Delete them? Are you sure?!'}, class: "btn" %>

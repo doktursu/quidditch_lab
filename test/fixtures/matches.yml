@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  competition: MyString
+  team_1_id: 1
+  team_2_id: 1
+
+two:
+  competition: MyString
+  team_1_id: 1
+  team_2_id: 1

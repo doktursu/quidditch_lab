@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+    <li><%= link_to 'Add Player', new_player_path %></li>
+  </ul>
+</nav>
+
+<% @players.each do |player| %>
+<p><%= player.name %>, <%= player.age %> - <%=player.team.name if player.team %></p>
+<%end %>
