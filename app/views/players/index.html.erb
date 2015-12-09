@@ -1,8 +1,6 @@
-<nav>
-  <ul>
-    <li><%= link_to 'Add Player', new_player_path %></li>
-  </ul>
-</nav>
+<%= render partial: "nav" %>
+
+<h2>Players</h2>
 
 <% @players.each do |player| %>
 <p><%= player.name %>, <%= player.age %> - <%=player.team.name if player.team %></p>

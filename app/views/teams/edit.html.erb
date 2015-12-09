@@ -1,4 +1,6 @@
+<%= render partial: "nav" %>
+
 <%= form_for @team do |f| %>
   <%= render partial: "form", locals: { f: f } %>
-  <%= f.submit 'Update team!' %>
+  <%= f.submit 'Update team!', class: "btn" %>
 <% end %>

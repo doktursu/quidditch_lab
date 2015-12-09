@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+    @teams = Team.all.order(:name)
   end
 
   def new
@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    # binding.pry
   end
 
   def edit

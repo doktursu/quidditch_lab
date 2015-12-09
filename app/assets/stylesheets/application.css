@@ -1,8 +1,42 @@
 body {
-  margin-top: 100px;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  background-color: #CCFFFF;
+  background: #CCFFFF url(http://orig10.deviantart.net/3bef/f/2011/320/d/1/cloudy_texture_4_by_ohsallysfever-d4gfe71.jpg) center no-repeat;
+  padding: 1em;
+}
+
+#wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#content {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: block;
+  margin-bottom: 1.2em;
+}
+
+
+.logo {
+  float: right;
+  margin: 0 0.8em 0 0;
+  font-size: 2.4em;
+}
+
+/*
+  *******************************************************
+  Buttons
+  *******************************************************
+*/
+
+.button_to {
+  display: inline-block;
+  /*width: 33%;*/
+  margin: 0 0.2em;
 }
 
 .btn {
@@ -10,13 +44,41 @@ body {
   background: #eee;
   border-radius: 5px;
   font: inherit;
-  font-size: 1em;
+  font-size: 0.8em;
   cursor: pointer;
+  min-width: 4em;
 }
 
-a.btn {
+.btn-show {
+  width: 100%;
+}
+
+/*
+  *******************************************************
+  Nav
+  *******************************************************
+*/
+
+nav li {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+nav a {
   text-decoration: none;
   font: inherit;
+  font-size: 1.2em;
+  color: #694489;
+  padding: 2px 4px;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #BDA0CB;
+}
+
+nav a:active {
+  color: #fff;
 }
 
 /*
@@ -30,6 +92,76 @@ label {
 }
 
 input {
+  border: none;
+  background-color: rgba(255,255,255,0.8);
+  padding: 4px 6px;
+}
+
+/*
+  *******************************************************
+  Team
+  *******************************************************
+*/
+
+.emblem {
+  width: 200px;
+}
+
+img.emblem-show {
+  float: right;
+  width: 50%;
+}
+
+div.team {
+  display: inline-block;
+}
+.team {
+  text-align: center
+}
+
+.team-name {
+
+}
+
+/*
+  *******************************************************
+  Table
+  *******************************************************
+*/
+table {
+  border-collapse: collapse;
+  margin-bottom: 1.2em
+}
+
+th, td {
+  padding: 0.2em 1em;
+}
+
+th {
+  border-bottom: 2px solid #666;
+}
+
+td {
+  border-bottom: 1px solid #aaa;
+}
+
+
+/*
+  *******************************************************
+  Clearfix
+  *******************************************************
+*/
+
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+} 
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
 /*

@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
   
   def index
-    @players = Player.all
+    @players = Player.all.order(:name)
   end
 
   def new

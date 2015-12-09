@@ -1,17 +1,21 @@
+<%= render partial: "nav" %>
+
+<h2>Add a Player</h2>
+
 <%= form_for @player do |f| %>
 
-<p><%= f.label :name %>
-<%= f.text_field :name %></p>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
 
-<p><%= f.label :age %>
-<%= f.number_field :age %></p>
+  <p><%= f.label :age %>
+  <%= f.number_field :age %></p>
 
-<% @teams.each do |team| %>
-  <p><%= f.radio_button :team_id, team.id %>
-  <%= f.label :team_id, "#{team.name}" %></p>
-<% end %>
+  <%= f.label :team_id, 'Team' %>
+  <% @teams.each do |team| %>
+    <p><%= f.radio_button :team_id, team.id %>
+    <%= f.label :team_id, "#{team.name}" %></p>
+  <% end %>
 
-
-<p><%= f.submit "Create Player" %></p>
+  <p><%= f.submit class: "btn" %></p>
 
 <% end %>

@@ -1,23 +1,74 @@
-<h1><%= @team.name %></h1>
-<p>Mascot: <%= @team.mascot%></p>
-<%= image_tag @team.image, alt: 'No image', height: 200 %>
-<p>Founded: <%= @team.founded %></p>
-<p>Ground: <%= @team.ground %></p>
-<p>League: <%= @team.league %></p>
-<p>Position: <%= @team.last_position %></p>
+<%= render partial: "nav" %>
 
-<p>Players:</p>
-<% @team.players.each do |player| %>
-  <p><%= player.name %>, <%= player.age %></p>
-<% end %>
+<div class="show">
+  <div class="row group">
+    <%= image_tag @team.image, alt: 'No image', class: "emblem emblem-show" %>
 
-<p>Matches:</p>
-<% @team.matches do |match| %>
-  <h2>Competition "<%= match.competition %>"</h2>
-  <p><%= match.home_team.team.name %> vs. <%= match.team.name %></p>
-  <p><%= match.home_team_score %> / <%= match.team_score %></p>
-<% end %>
+    <h1><%= @team.name %></h1>
 
+    <table>
+      <tr>
+        <td><b>Mascot:</b></td>
+        <td><%= @team.mascot%></td>
+      </tr>
+      <tr>
+        <td><b>Founded:</b></td>
+        <td><%= @team.founded%></td>
+      </tr>
+      <tr>
+        <td><b>Ground:</b></td>
+        <td><%= @team.ground%></td>
+      </tr>
+      <tr>
+        <td><b>League:</b></td>
+        <td><%= @team.league%></td>
+      </tr>
+      <tr>
+        <td><b>Last Position:</b></td>
+        <td><%= @team.last_position%></td>
+      </tr>
+      <tr>
+        <td><b>Players:</b></td>
+        <td></td>
+      </tr>
+      <% @team.players.each do |player| %>
+        <tr>
+          <td></td>
+          <td><%= player.name %>, <%= player.age %></td>
+        </tr>  
+      <% end %>
+    </table>
 
-<%= link_to "Edit Team", edit_team_path(@team), class: "btn" %>
-<%= button_to 'Delete Team', team_path(@team), method: :delete, data: {confirm: 'Delete them? Are you sure?!'}, class: "btn" %>
+    <%= button_to "Edit Team", edit_team_path(@team), method: :get, class: "btn" %>
+    <%= button_to 'Delete Team', team_path(@team), method: :delete, data: {confirm: 'Delete them? Are you sure?!'}, class: "btn" %>
+  </div>
+
+  <div class="row">
+  <h3><%= @team.name %> Matches:</h3>
+
+    <table>
+      <tr>
+        <th><b>Competition</b></th>
+        <th><b>Venue</b></th>
+        <th><b>Opponent</b></th>
+        <th><b>Score</b></th>
+      </tr>
+      <% @team.home_team.matches.each do |match| %>
+      <tr>
+        <td><%= match.competition %></td>
+        <td>Home</td>
+        <td><%= match.team.name %></td>
+        <td><%= match.home_team_score %> - <%= match.team_score %></td>
+      </tr>
+      <% end %>
+      <% @team.matches.each do |match| %>
+      <tr>
+        <td><%= match.competition %></td>
+        <td>Away</td>
+        <td><%= match.home_team.team.name %></td>
+        <td><%= match.home_team_score %> - <%= match.team_score %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,11 +1,24 @@
-<nav>
-  <ul>
-    <li><%= link_to "New Match", new_match_path %></li>
-  </ul>
-</nav>
+<%= render partial: "nav" %>
 
-<% @matches.each do |match| %>
-<h2>Competition "<%= match.competition %>"</h2>
-<p><%= match.home_team.team.name %> vs. <%= match.team.name %></p>
-<p><%= match.home_team_score %> / <%= match.team_score %></p>
-<% end %>
+<div class="row">
+<h2>Matches</h2>
+
+  <table>
+    <tr>
+      <th><b>Competition</b></th>
+      <th><b>Venue</b></th>
+      <th><b>Home Team</b></th>
+      <th><b>Away Team</b></th>
+      <th><b>Score</b></th>
+    </tr>
+    <% @matches.each do |match| %>
+    <tr>
+      <td><%= match.competition %></td>
+      <td><%= match.home_team.team.ground %></td>
+      <td><%= match.home_team.team.name %></td>
+      <td><%= match.team.name %></td>
+      <td><%= match.home_team_score %> - <%= match.team_score %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

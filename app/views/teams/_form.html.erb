@@ -1,28 +1,34 @@
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br>
-<br>
-<%= f.label :image %>
-<%= f.url_field :image %>
-<br>
-<br>
-<%= f.label :founded %>
-<%= f.date_field :founded %>
-<br>
-<br>
-<%= f.label :mascot %>
-<%= f.text_field :mascot %>
-<br>
-<br>
-<%= f.label :ground %>
-<%= f.text_field :ground %>
-<br>
-<br>
-<%= f.label :league %>
-<%= f.text_field :league %>
-<br>
-<br>
-<%= f.label :last_position %>
-<%= f.number_field :last_position %>
-<br>
-<br>
+  <%= image_tag @team.image, class: "emblem emblem-show" %>
+
+  <h1><%= @team.name %></h1>
+
+  <table>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :image, 'Image url' %></td>
+      <td><%= f.url_field :image %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :founded %></td>
+      <td><%= f.date_field :founded %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :mascot %></td>
+      <td><%= f.text_field :mascot %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :ground %></td>
+      <td><%= f.text_field :ground %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :league %></td>
+      <td><%= f.text_field :league %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :last_position %></td>
+      <td><%= f.number_field :last_position %></td>
+    </tr>
+  </table>
