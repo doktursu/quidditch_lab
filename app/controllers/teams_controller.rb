@@ -8,7 +8,8 @@ class TeamsController < ApplicationController
   end
 
   def create
-    Team.create(team_params)
+    team = Team.create(team_params)
+    HomeTeam.create(team_id: team.id)
     redirect_to teams_path
   end
 

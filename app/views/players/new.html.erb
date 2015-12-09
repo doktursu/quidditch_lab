@@ -7,8 +7,8 @@
 <%= f.number_field :age %>
 
 <% @teams.each do |team| %>
-  <%= f.radio_button :team_id, team.id %>
-  <%= f.label :team_id, "#{team.name}" %>
+  <p><%= f.radio_button :team_id, team.id %>
+  <%= f.label :team_id, "#{team.name}" %></p>
 <% end %>
 
 
