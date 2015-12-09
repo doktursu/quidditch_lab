@@ -4,8 +4,21 @@ class MatchesController < ApplicationController
     @matches = Match.all
   end
 
-  private
-  def player_params
-    params.require(:player).permit(:name, :age, :team_id)
+  def new
+    @match = Match.new
+    @teams = Team.all
   end
+
+  def create
+    Match.create(match_params)
+    redirect_to matches_path
+  end
+
+  private
+  def match_params
+    params.require(:match).permit(:competition, :team_id, :home_team_id,  :team_score, :home_team_score)
+  end
+
 end
+
+

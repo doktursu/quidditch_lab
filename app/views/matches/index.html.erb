@@ -1,4 +1,5 @@
 <% @matches.each do |match| %>
-<h2>Competition <%= match.competition %></h2>
-<p><%= match.team.name %> vs. <%= match.home_team.team.name %></p>
+<h2>Competition "<%= match.competition %>"</h2>
+<p><%= match.home_team.team.name %> vs. <%= match.team.name %></p>
+<p><%= match.home_team_score %> / <%= match.team_score %></p>
 <% end %>

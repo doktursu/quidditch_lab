@@ -11,6 +11,13 @@
   <p><%= player.name %>, <%= player.age %></p>
 <% end %>
 
+<p>Matches:</p>
+<% @team.matches do |match| %>
+  <h2>Competition "<%= match.competition %>"</h2>
+  <p><%= match.home_team.team.name %> vs. <%= match.team.name %></p>
+  <p><%= match.home_team_score %> / <%= match.team_score %></p>
+<% end %>
+
 
 <%= link_to "Edit Team", edit_team_path(@team), class: "btn" %>
 <%= button_to 'Delete Team', team_path(@team), method: :delete, data: {confirm: 'Delete them? Are you sure?!'}, class: "btn" %>

@@ -1,0 +1,20 @@
+<%= form_for @match do |f| %>
+
+<%= f.label :competition %>
+<%= f.text_field :competition %>
+<br>
+<%= f.label :home_team_id %>
+<% options = options_from_collection_for_select(@teams, :id, :name) %>
+<%= f.select :home_team_id, options %>
+<%= f.label :home_team_score %>
+<%= f.number_field :home_team_score %>
+<br>
+<%= f.label :team_id, "Away team" %>
+<% options = options_from_collection_for_select(@teams, :id, :name) %>
+<%= f.select :team_id, options %>
+<%= f.label :team_score, "Away team score" %>
+<%= f.number_field :team_score %>
+<br>
+<%= f.submit %>
+
+<% end %>

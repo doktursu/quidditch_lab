@@ -1,10 +1,10 @@
 <%= form_for @player do |f| %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+<p><%= f.label :name %>
+<%= f.text_field :name %></p>
 
-<%= f.label :age %>
-<%= f.number_field :age %>
+<p><%= f.label :age %>
+<%= f.number_field :age %></p>
 
 <% @teams.each do |team| %>
   <p><%= f.radio_button :team_id, team.id %>
@@ -12,6 +12,6 @@
 <% end %>
 
 
-<%= f.submit "Create Player" %>
+<p><%= f.submit "Create Player" %></p>
 
 <% end %>
