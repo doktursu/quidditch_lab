@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th><b>Competition</b></th>
+    <th><b>Home Team</b></th>
+    <th><b>Home Score</b></th>
+    <th><b>Away Team</b></th>
+    <th><b>Away Score</b></th>
+  </tr>
+  <tr>
+    <td><%= f.text_field :competition %></td>
+    <td>
+      <% options = options_from_collection_for_select(@teams, :id, :name) %>
+      <%= f.select :home_team_id, options %>
+    </td>
+    <td><%= f.number_field :home_team_score %></td>
+    <td>
+      <% options = options_from_collection_for_select(@teams, :id, :name) %>
+      <%= f.select :team_id, options %>
+    </td>
+    <td><%= f.number_field :team_score %></td>
+  </tr>
+</table>

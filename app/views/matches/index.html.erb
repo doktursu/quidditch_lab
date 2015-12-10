@@ -10,6 +10,8 @@
       <th><b>Home Team</b></th>
       <th><b>Away Team</b></th>
       <th><b>Score</b></th>
+      <th></th>
+      <th></th>
     </tr>
     <% @matches.each do |match| %>
     <tr>
@@ -18,6 +20,8 @@
       <td><%= match.home_team.team.name %></td>
       <td><%= match.team.name %></td>
       <td><%= match.home_team_score %> - <%= match.team_score %></td>
+      <td><%= button_to "Edit", edit_match_path(match), class: "btn" %></td>
+      <td><%= button_to "Delete", match_path(match), method: :delete, data: { confirm: "Delete match? Are you sure?!"}, class: "btn" %></td>
     </tr>
     <% end %>
   </table>
