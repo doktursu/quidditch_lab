@@ -1,0 +1,17 @@
+<table>
+<tr>
+  <td><%= f.label :name %></td>
+  <td><%= f.text_field :name %></td>
+</tr>
+<tr>
+  <td><%= f.label :age %></td>
+  <td><%= f.number_field :age %></td>
+</tr>
+<tr>
+  <td><%= f.label :team_id, 'Team' %></td>
+  <td><% @teams.each do |team| %>
+    <p><%= f.radio_button :team_id, team.id %>
+    <%= f.label :team_id, "#{team.name}" %></p>
+  <% end %></td>
+</tr>
+</table>

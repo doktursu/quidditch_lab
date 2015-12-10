@@ -7,12 +7,16 @@
     <th>Name</th>
     <th>Age</th>
     <th>Team</th>
+    <th></th>
+    <th></th>
   </tr>
   <% @players.each do |player| %>
   <tr>
     <td><%= player.name %></td>
     <td><%= player.age %></td>
     <td><%=player.team.name if player.team %></td>
+    <td><%= button_to "Edit", edit_player_path(player), method: :get, class: "btn" %></td>
+    <td><%= button_to "Delete", player_path(player), method: :delete, data: {confirm: 'Delete player? Are you sure?!'}, class: "btn" %></td>
   </tr>
   <%end %>
 </table>
