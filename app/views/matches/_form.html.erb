@@ -9,12 +9,12 @@
   <tr>
     <td><%= f.text_field :competition %></td>
     <td>
-      <% options = options_from_collection_for_select(@teams, :id, :name) %>
+      <% options = options_from_collection_for_select(@teams, :id, :name, @match.home_team_id) %>
       <%= f.select :home_team_id, options %>
     </td>
     <td><%= f.number_field :home_team_score %></td>
     <td>
-      <% options = options_from_collection_for_select(@teams, :id, :name) %>
+      <% options = options_from_collection_for_select(@teams, :id, :name, @match.team_id) %>
       <%= f.select :team_id, options %>
     </td>
     <td><%= f.number_field :team_score %></td>

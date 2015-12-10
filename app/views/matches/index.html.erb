@@ -20,7 +20,7 @@
       <td><%= match.home_team.team.name %></td>
       <td><%= match.team.name %></td>
       <td><%= match.home_team_score %> - <%= match.team_score %></td>
-      <td><%= button_to "Edit", edit_match_path(match), class: "btn" %></td>
+      <td><%= button_to "Edit", edit_match_path(match), method: :get, class: "btn" %></td>
       <td><%= button_to "Delete", match_path(match), method: :delete, data: { confirm: "Delete match? Are you sure?!"}, class: "btn" %></td>
     </tr>
     <% end %>
