@@ -3,19 +3,22 @@
 <h2>Add a Player</h2>
 
 <%= form_for @player do |f| %>
-
-  <p><%= f.label :name %>
-  <%= f.text_field :name %></p>
-
-  <p><%= f.label :age %>
-  <%= f.number_field :age %></p>
-
-  <%= f.label :team_id, 'Team' %>
-  <% @teams.each do |team| %>
+<table>
+<tr>
+  <td><%= f.label :name %></td>
+  <td><%= f.text_field :name %></td>
+</tr>
+<tr>
+  <td><%= f.label :age %></td>
+  <td><%= f.number_field :age %></td>
+</tr>
+<tr>
+  <td><%= f.label :team_id, 'Team' %></td>
+  <td><% @teams.each do |team| %>
     <p><%= f.radio_button :team_id, team.id %>
     <%= f.label :team_id, "#{team.name}" %></p>
-  <% end %>
-
-  <p><%= f.submit class: "btn" %></p>
-
+  <% end %></td>
+</tr>
+</table>
+<p><%= f.submit class: "btn" %></p>
 <% end %>

@@ -6,7 +6,7 @@
   <div class="team">
     <h2 class="team-name"><%= team.name %></h2>
     <%= image_tag team.image, class: "emblem" %>
-    <p>Founded <%= team.founded %></p>
+    <p>Founded <%= team.founded.year if team.founded %></p>
     <%= button_to 'Show', team_path(team), method: :get, class: "btn btn-show" %><!--
     --><%= button_to 'Edit', edit_team_path(team), method: :get, class: "btn btn-show" %><!--
     --><%= button_to 'Delete', team_path(team), method: :delete, data: {confirm: 'Delete them? Are you sure?!'}, class: "btn btn-show" %>

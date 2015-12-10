@@ -56,7 +56,7 @@
       <% @team.home_team.matches.each do |match| %>
       <tr>
         <td><%= match.competition %></td>
-        <td>Home</td>
+        <td>Home - <%= match.home_team.team.ground %></td>
         <td><%= match.team.name %></td>
         <td><%= match.home_team_score %> - <%= match.team_score %></td>
       </tr>
@@ -64,7 +64,7 @@
       <% @team.matches.each do |match| %>
       <tr>
         <td><%= match.competition %></td>
-        <td>Away</td>
+        <td>Away - <%= match.home_team.team.ground %></td>
         <td><%= match.home_team.team.name %></td>
         <td><%= match.home_team_score %> - <%= match.team_score %></td>
       </tr>

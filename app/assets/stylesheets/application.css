@@ -2,7 +2,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   background: #CCFFFF url(http://orig10.deviantart.net/3bef/f/2011/320/d/1/cloudy_texture_4_by_ohsallysfever-d4gfe71.jpg) center no-repeat;
-  padding: 1em;
+  padding-bottom: 2em;
+  margin: 0;
 }
 
 #wrapper {
@@ -23,8 +24,14 @@ body {
 
 .logo {
   float: right;
-  margin: 0 0.8em 0 0;
+  margin: 0 0.8em 0.4em 0;
   font-size: 2.4em;
+}
+
+#header {
+  background: linear-gradient(rgba(0,0,0,0.1) 8%, rgba(0,0,0,0.05) 15%, rgba(0,0,0,0) 30%);
+/*  background: linear-gradient(red, yellow);*/
+  padding-top: 0.7em;
 }
 
 /*
@@ -40,13 +47,22 @@ body {
 }
 
 .btn {
-  border: 1px solid #000;
-  background: #eee;
-  border-radius: 5px;
+/*  border: 1px solid #000;*/
+/*  background: #eee;*/
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 2px;
   font: inherit;
   font-size: 0.8em;
   cursor: pointer;
   min-width: 4em;
+}
+
+.btn:hover {
+  background: #bbb;
+}
+
+.btn:active {
+  background: #ddd;
 }
 
 .btn-show {
@@ -93,8 +109,13 @@ label {
 
 input {
   border: none;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.75);
   padding: 4px 6px;
+}
+
+input:focus {
+  outline: 0;
+  background-color: #fff;
 }
 
 /*
@@ -104,12 +125,12 @@ input {
 */
 
 .emblem {
-  width: 200px;
+  height: 200px;
 }
 
 img.emblem-show {
   float: right;
-  width: 50%;
+  height: 330px;
 }
 
 div.team {
